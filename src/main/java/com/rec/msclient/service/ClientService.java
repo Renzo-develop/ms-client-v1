@@ -10,6 +10,8 @@ public interface ClientService {
 
     public Mono<Client> findById(Long id);
 
+    public Mono<Client> findByDni(String id);
+
     public Mono<Client> createClient(Client client);
 
     public Mono<Client> updateClient(Client client);

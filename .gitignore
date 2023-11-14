@@ -1,6 +1,6 @@
-.git/
-.idea/
-.target/
+.git/**
+.idea/**
+.target/**
 .mvn/
 **.md
 **.cmd

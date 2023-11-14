@@ -6,6 +6,7 @@ import com.rec.msclient.entity.ResponseApi;
 import com.rec.msclient.service.ClientService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
@@ -28,12 +29,16 @@ public class ClientController {
         return clientService.findById(id);
     }
 
+    @GetMapping("/findByDni/{dni}")
+    public Mono<Client> findByDni(@PathVariable String dni) {
+        return clientService.findByDni(dni);
+    }
+
     @PostMapping("/create")
-    public Mono<ResponseApi> create(@RequestBody Client client) {
+    public Mono<ResponseApi> create(@Validated @RequestBody Client client) {
         return clientService.createClient(client)
                 .map(r -> ResponseApi.builder().message("Client " + r.getName() + " created").build())
                 .doOnSuccess(r -> log.info("Successful {}", r.getMessage()))
-//                .onErrorResume(ex -> CustomException.builder().statusCode(ex.))
                 .doOnError(ex -> log.error("Error Produced {}", ex.toString()));
     }
 

@@ -1,0 +1,10 @@
+com\rec\msclient\entity\ResponseApi$ResponseApiBuilder.class
+com\rec\msclient\MsClientApplication.class
+com\rec\msclient\service\ClientService.class
+com\rec\msclient\entity\CustomException$CustomExceptionBuilder.class
+com\rec\msclient\entity\ResponseApi.class
+com\rec\msclient\controller\ClientController.class
+com\rec\msclient\entity\Client.class
+com\rec\msclient\entity\CustomException.class
+com\rec\msclient\repository\ClientRepository.class
+com\rec\msclient\service\impl\ClientServiceImpl.class

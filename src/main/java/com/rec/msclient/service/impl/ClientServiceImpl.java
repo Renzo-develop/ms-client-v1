@@ -22,6 +22,10 @@ public class ClientServiceImpl implements ClientService {
         return clientRepo.findById(id);
     }
 
+    public Mono<Client> findByDni(String dni) {
+        return clientRepo.findByDni(dni);
+    }
+
     public Mono<Client> createClient(Client client) {
         return clientRepo.insert(client);
     }
