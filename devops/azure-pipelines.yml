@@ -33,9 +33,9 @@ stages:
         versionSpec: '17'
         jdkArchitectureOption: 'x64'
     - script: |
-      # Define JAVA_HOME variable to use Java 17
-      echo "##vso[task.setvariable variable=JAVA_HOME]/usr/lib/jvm/java-17-openjdk-amd64"
-    displayName: 'Set JAVA_HOME'
+        # Define JAVA_HOME variable to use Java 17
+        echo "##vso[task.setvariable variable=JAVA_HOME]/usr/lib/jvm/java-17-openjdk-amd64"
+      displayName: 'Set JAVA_HOME'
     - task: Maven@4
       displayName: 'Maven pom.xml'
       inputs:
