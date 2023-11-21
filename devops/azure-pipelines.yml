@@ -39,9 +39,10 @@ stages:
     - task: Maven@4
       displayName: 'Maven pom.xml'
       inputs:
+        mavenPomFile: 'pom.xml'
+        options: '-Dmaven.compiler.source=17 -Dmaven.compiler.target=17'
         goals: 'clean install'
-      env:
-        JAVA_HOME: $(JAVA_HOME)
+        jdkSourceOption: '11'
     - task: Docker@2
       inputs:
         containerRegistry: 'renzoacr'
