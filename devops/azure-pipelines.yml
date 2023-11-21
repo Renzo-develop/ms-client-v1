@@ -35,6 +35,7 @@ stages:
         jdkSourceOption: 'PreInstalled'
     - script: |
         echo "##vso[task.setvariable variable=JAVA_HOME]/usr/lib/jvm/java-17-openjdk-amd64"
+        echo "JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64" >> $GITHUB_ENV
       displayName: 'Set JAVA_HOME'
     - task: Maven@4
       displayName: 'Maven pom.xml'
