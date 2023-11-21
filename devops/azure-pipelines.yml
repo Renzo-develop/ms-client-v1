@@ -42,7 +42,7 @@ stages:
         mavenPomFile: 'pom.xml'
         options: '-Dmaven.compiler.source=17 -Dmaven.compiler.target=17'
         goals: 'clean install'
-        jdkSourceOption: '11'
+        jdkSourceOption: '17'
     - task: Docker@2
       inputs:
         containerRegistry: 'renzoacr'
