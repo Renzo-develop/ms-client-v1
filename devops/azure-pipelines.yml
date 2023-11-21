@@ -31,7 +31,8 @@ stages:
     - task: JavaToolInstaller@0
       inputs:
         versionSpec: '17'
-        architecture: 'x64'
+        jdkArchitectureOption: 'x64'
+        jdkSourceOption: 'PreInstalled'
     - script: |
         echo "##vso[task.setvariable variable=JAVA_HOME]/usr/lib/jvm/java-17-openjdk-amd64"
       displayName: 'Set JAVA_HOME'
