@@ -5,7 +5,7 @@
 replicaCount: 1
 
 image:
-  repository: renzoacr.azurecr.io/Renzo-develop/ms-client-v1
+  repository: renzoacr.azurecr.io/renzo-develop/ms-client-v1
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
   tag: ""
