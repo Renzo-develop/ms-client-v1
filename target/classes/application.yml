@@ -1,9 +1,17 @@
 spring:
   application:
     name: ms-client
-  config:
-    import: optional:configserver:http://config-server-rec:8888
-  profiles:
-    active: dev
-
-
+  data:
+    mongodb:
+      uri: mongodb+srv://amigoprogramador:Evangelion2939.@clusterap.67x9fq9.mongodb.net/?retryWrites=true&w=majority&appName=AtlasApp
+      database: clientdb
+server: 
+  port: 8181
+springdoc:
+  api-docs:
+    path: /api-docs
+management:
+  endpoint:
+    health:
+      probes:
+        enabled: true    
