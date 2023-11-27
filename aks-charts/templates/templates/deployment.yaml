@@ -8,11 +8,6 @@ spec:
   {{- if not .Values.autoscaling.enabled }}
   replicas: {{ .Values.replicaCount }}
   {{- end }}
-  ports:
-  - port: {{ .Values.service.externalPort }}
-    targetPort: 8181
-    protocol: TCP
-    name: {{ .Values.service.name }}  
   selector:
     matchLabels:
       {{- include "aks-charts.selectorLabels" . | nindent 6 }}
@@ -44,6 +39,7 @@ spec:
           ports:
             - name: http
               containerPort: 8181
+              protocol: TCP
           livenessProbe:
             httpGet:
               path: /actuator/health/readiness
